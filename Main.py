@@ -1,7 +1,7 @@
 from tqdm import tqdm
 import socket,os,sys,time,random,psutil,datetime,schedule,multiprocessing
 
-module =["pip","tqdm"]
+module =["pip","tqdm","psutil","multiprocessing"]
 
 ps = psutil.Process(os.getpid())
 
@@ -37,7 +37,7 @@ def update():
 		os.system("pip install {} --upgrade".format(i))
 
 def main():
-	#multiprocessing.Process(target=auto,args=()).start()
+	multiprocessing.Process(target=auto,args=()).start()
 	while True:
 		command = input("$")
 		cmd = ["ip","getip","help","update","now"]
